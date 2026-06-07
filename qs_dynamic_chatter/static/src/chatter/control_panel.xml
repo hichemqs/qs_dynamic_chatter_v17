@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-inherit="web.ControlPanel" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o_control_panel_navigation')]" position="inside">
+            <t t-set-slot="control-panel-navigation-additional">
+                <button t-if="!env.inDialog"
+                    id="hide_chatter"
+                    t-on-click="() => this.onToggleChatter()"
+                    style="min-height: 2.1rem;"
+                    class="btn btn-secondary o_switch_view fa fa-comments d-none"
+                    t-att-class="{'active': this.chatterState.isChatterVisible}"/>
+            </t>
+        </xpath>
+    </t>
+</templates>
